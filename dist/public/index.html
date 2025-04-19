@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Package Management System</title>
+  <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+
+  <!-- Welcome Page -->
+  <section id="welcome" class="visible">
+    <h1>Welcome to the Package Management System</h1>
+    <p>Click the button below to get started.</p>
+    <div class="button-container">
+      <button onclick="showSection('home')">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Home Page -->
+  <section id="home" class="container">
+    <h1>Package Management System</h1>
+    <div class="button-container">
+      <button onclick="showSection('add')">Add Package</button>
+      <button onclick="showSection('list')">List Packages</button>
+      <button onclick="showSection('search')">Search Package</button>
+      <button onclick="showSection('update')">Update Package Status</button>
+      <button onclick="showSection('delete')">Delete Package</button>
+      <button onclick="showSection('thankyou')">Exit</button>
+    </div>
+  </section>
+
+  <!-- Add Package -->
+  <section id="add" class="form-container">
+    <div class="home-button-container">
+      <button onclick="showSection('home')">Back to Home</button>
+    </div>
+    <h2>Add Package</h2>
+    <form id="addPackageForm">
+      <input type="text" placeholder="Sender Name" required>
+      <input type="text" placeholder="Receiver Name" required>
+      <input type="text" placeholder="Sender Address" required>
+      <input type="text" placeholder="Receiver Address" required>
+      <input type="number" placeholder="Weight (kg)" required>
+      <input type="number" placeholder="Cost per Unit Weight" required>
+      <input type="number" placeholder="Tracking Number" required>
+      <select required>
+        <option value="One-Day">One-Day</option>
+        <option value="Two-Day">Two-Day</option>
+      </select>
+      <input type="number" placeholder="Flat Fee" required>
+      <button type="submit">Add Package</button>
+    </form>
+  </section>
+
+  <!-- List Packages -->
+  <section id="list" class="package-list-container">
+    <div class="back-button-container">
+      <button onclick="showSection('home')">Back to Home</button>
+    </div>
+    <h2>Package List</h2>
+    <div class="package-item"><h3>Package #001</h3><p>Sender: John Doe</p><p>Receiver: Jane Smith</p><p>Status: In Transit</p></div>
+    <div class="package-item"><h3>Package #002</h3><p>Sender: Alice Green</p><p>Receiver: Bob Brown</p><p>Status: Delivered</p></div>
+    <div class="package-item"><h3>Package #003</h3><p>Sender: Carlos Blue</p><p>Receiver: Diana White</p><p>Status: Pending</p></div>
+  </section>
+
+  <!-- Search Package -->
+  <section id="search" class="search-container">
+    <div class="home-button-container">
+      <button onclick="showSection('home')">Back to Home</button>
+    </div>
+    <h2>Search Package</h2>
+    <form id="searchPackageForm">
+      <input type="text" placeholder="Enter Tracking Number" required>
+      <button type="submit">Search Package</button>
+    </form>
+    <div id="output"></div>
+  </section>
+
+  <!-- Update Package -->
+  <section id="update" class="update-container">
+    <div class="home-button-container">
+      <button onclick="showSection('home')">Back to Home</button>
+    </div>
+    <h2>Update Package Status</h2>
+    <form id="updateStatusForm">
+      <input type="text" placeholder="Enter Tracking Number" required>
+      <select required>
+        <option value="">Select Status</option>
+        <option value="Shipped">Shipped</option>
+        <option value="In-Transit">In-Transit</option>
+        <option value="Delivered">Delivered</option>
+      </select>
+      <button type="submit">Update Status</button>
+    </form>
+  </section>
+
+  <!-- Delete Package -->
+  <section id="delete" class="delete-container">
+    <div class="home-button-container">
+      <button onclick="showSection('home')">Back to Home</button>
+    </div>
+    <h2>Delete Package</h2>
+    <form id="deletePackageForm">
+      <input type="text" placeholder="Enter Tracking Number" required>
+      <button type="submit">Delete Package</button>
+    </form>
+  </section>
+
+  <!-- Exit Page -->
+  <section id="thankyou" class="thankyou-container">
+    <div class="home-button-container">
+      <button onclick="showSection('welcome')">Restart</button>
+    </div>
+    <h1>Thank you for choosing to ship with us!</h1>
+    <p>We appreciate your business. Have a great day!</p>
+  </section>
+  <script src="script.js"></script>
+
+</body>
+</html>
