@@ -24,7 +24,7 @@
     <div class="button-container">
       <button onclick="showSection('add')">Add Package</button>
       <button onclick="showSection('list')">List Packages</button>
-      <button onclick="showSection('search')">Search Package</button>
+       <!--<button onclick="showSection('search')">Search Package</button>-->
       <button onclick="showSection('update')">Update Package Status</button>
       <button onclick="showSection('delete')">Delete Package</button>
       <button onclick="showSection('thankyou')">Exit</button>
@@ -38,18 +38,17 @@
     </div>
     <h2>Add Package</h2>
     <form id="addPackageForm">
-      <input type="text" placeholder="Sender Name" required>
-      <input type="text" placeholder="Receiver Name" required>
-      <input type="text" placeholder="Sender Address" required>
-      <input type="text" placeholder="Receiver Address" required>
-      <input type="number" placeholder="Weight (kg)" required>
-      <input type="number" placeholder="Cost per Unit Weight" required>
-      <input type="number" placeholder="Tracking Number" required>
-      <select required>
+      <input type="text" name="senderName" placeholder="Sender Name" required>
+<input type="text" name="receiverName" placeholder="Receiver Name" required>
+<input type="text" name="senderAddress" placeholder="Sender Address" required>
+<input type="text" name="receiverAddress" placeholder="Receiver Address" required>
+<input type="number" name="weight" placeholder="Weight (kg)" required>
+<input type="number" name="costPerUnitWeight" placeholder="Cost per Unit Weight" required>
+<input type="number" name="trackingNumber" placeholder="Tracking Number" required>
         <option value="One-Day">One-Day</option>
         <option value="Two-Day">Two-Day</option>
       </select>
-      <input type="number" placeholder="Flat Fee" required>
+      <input type="hidden" name="flatFee" value="">
       <button type="submit">Add Package</button>
     </form>
   </section>
@@ -65,7 +64,7 @@
     <div class="package-item"><h3>Package #003</h3><p>Sender: Carlos Blue</p><p>Receiver: Diana White</p><p>Status: Pending</p></div>
   </section>
 
-  <!-- Search Package -->
+  <!-- Search Package 
   <section id="search" class="search-container">
     <div class="home-button-container">
       <button onclick="showSection('home')">Back to Home</button>
@@ -76,7 +75,7 @@
       <button type="submit">Search Package</button>
     </form>
     <div id="output"></div>
-  </section>
+  </section>-->
 
   <!-- Update Package -->
   <section id="update" class="update-container">
