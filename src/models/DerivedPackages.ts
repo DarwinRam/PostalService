@@ -1,7 +1,7 @@
 // DerivedPackages.ts
 
-import OneDayPackageHeader from './OneDayPackageHeader';
-import TwoDayPackageHeader from './TwoDayPackageHeader';
+import OneDayPackageHeader from '../interface/OneDayPackageHeader';
+import TwoDayPackageHeader from '../interface/TwoDayPackageHeader';
 
 class OneDayPackage extends OneDayPackageHeader {
   calculateCost(): number {

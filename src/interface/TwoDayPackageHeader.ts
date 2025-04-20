@@ -1,6 +1,6 @@
 // TwoDayPackageHeader.ts
 
-import Package from './Package';
+import Package from '../models/Package';
 
 abstract class TwoDayPackageHeader extends Package {
   constructor(

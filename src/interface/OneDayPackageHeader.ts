@@ -1,6 +1,6 @@
 // OneDayPackageHeader.ts
 
-import Package from './Package';
+import Package from '../models/Package';
 
 abstract class OneDayPackageHeader extends Package {
   constructor(
