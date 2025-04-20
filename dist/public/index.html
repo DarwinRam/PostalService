@@ -38,19 +38,25 @@
     </div>
     <h2>Add Package</h2>
     <form id="addPackageForm">
-      <input type="text" name="senderName" placeholder="Sender Name" required>
-<input type="text" name="receiverName" placeholder="Receiver Name" required>
-<input type="text" name="senderAddress" placeholder="Sender Address" required>
-<input type="text" name="receiverAddress" placeholder="Receiver Address" required>
-<input type="number" name="weight" placeholder="Weight (kg)" required>
-<input type="number" name="costPerUnitWeight" placeholder="Cost per Unit Weight" required>
-<input type="number" name="trackingNumber" placeholder="Tracking Number" required>
-        <option value="One-Day">One-Day</option>
-        <option value="Two-Day">Two-Day</option>
+      <input type="text" id="senderName" name="senderName" placeholder="Sender Name" required>
+      <input type="text" id="receiverName" name="receiverName" placeholder="Receiver Name" required>
+      <input type="text" id="senderAddress" name="senderAddress" placeholder="Sender Address" required>
+      <input type="text" id="receiverAddress" name="receiverAddress" placeholder="Receiver Address" required>
+      <input type="number" id="weight" name="weight" placeholder="Weight (kg)" required>
+      <input type="number" id="costPerUnitWeight" name="costPerUnitWeight" placeholder="Cost per Unit Weight" required>
+      <input type="number" id="trackingNumber" name="trackingNumber" placeholder="Tracking Number" required>
+    
+      <select name="packageType" id="packageType" required>
+        <option value="">Select Package Type</option>
+        <option value="OneDay">One-Day</option>
+        <option value="TwoDay">Two-Day</option>
       </select>
-      <input type="hidden" name="flatFee" value="">
+    
+      <input type="number" id="flatFee" name="flatFee" placeholder="Flat Fee (for Two-Day)" />
+    
       <button type="submit">Add Package</button>
     </form>
+    
   </section>
 
   <!-- List Packages -->
