@@ -11,6 +11,23 @@ const pool = new Pool({
   port: 5432,
 });
 
+pool.connect((err, client, release) => {
+    if (err) {
+        return console.error('Error acquiring client', err.stack);
+    }
+    console.log('Connected to PostgreSQL database');
+    release();
+});
+
+pool.on('error', (err) => {
+    console.error('Unexpected error on idle client', err);
+    process.exit(-1);
+});
+
+// make variables available for importing from other files
+export const query = (text, params) => pool.query(text, params);
+
+
 export default pool;  // Export the pool to be used in other parts of the application
 
 
