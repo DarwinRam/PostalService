@@ -25,7 +25,7 @@ const addOneDayPackage = (req, res) => __awaiter(void 0, void 0, void 0, functio
         const query = `
       INSERT INTO Packages (
         sender_name, receiver_name, sender_address, receiver_address,
-        weight, cost_per_unit, shipping_method, flat_fee, tracking_number, status,
+        weight, cost_per_unit, shipping_method, flat_fee, tracking_number, status
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
     `;
         yield db_1.default.query(query, [
@@ -80,3 +80,65 @@ const addTwoDayPackage = (req, res) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.addTwoDayPackage = addTwoDayPackage;
+
+// List all packages
+const listPackages = async (_req, res) => {
+    //console.log("Fetching all packages from DB...");
+    try {
+        const result = await db_1.default.query("SELECT * FROM Packages ORDER BY tracking_number ASC");
+        //console.log("Packages fetched:", result.rows);
+        res.status(200).json(result.rows);
+    } catch (error) {
+        //console.error("Error fetching packages:", error);
+        res.status(500).json({ message: "Failed to retrieve packages." });
+    }
+};
+
+
+exports.listPackages = listPackages;
+
+const updatePackageStatus = async (req, res) => {
+    const { trackingNumber, status } = req.body;
+  
+    try {
+      const result = await db_1.default.query(  // Make sure to use db_1.default here
+        `UPDATE Packages SET status = $1 WHERE tracking_number = $2`,
+        [status, trackingNumber]
+      );
+  
+      if (result.rowCount === 0) {
+        return res.status(404).json({ message: "Package not found." });
+      }
+  
+      res.status(200).json({ message: "Status updated successfully." });
+    } catch (error) {
+      console.error("Error updating package status:", error);
+      res.status(500).json({ message: "Failed to update status." });
+    }
+  };
+
+  exports.updatePackageStatus = updatePackageStatus;
+
+  const deletePackage = async (req, res) => {
+    const { trackingNumber } = req.body;
+  
+    try {
+      const result = await db_1.default.query(  // Make sure to use db_1.default here
+        `DELETE FROM Packages WHERE tracking_number = $1`,
+        [trackingNumber]
+      );
+  
+      if (result.rowCount === 0) {
+        return res.status(404).json({ message: "Package not found." });
+      }
+  
+      res.status(200).json({ message: "Package deleted successfully." });
+    } catch (error) {
+      console.error("Error deleting package:", error);
+      res.status(500).json({ message: "Failed to delete package." });
+    }
+  };
+    
+
+
+exports.deletePackage = deletePackage;

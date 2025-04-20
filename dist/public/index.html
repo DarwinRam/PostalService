@@ -44,7 +44,7 @@
       <input type="text" id="receiverAddress" name="receiverAddress" placeholder="Receiver Address" required>
       <input type="number" id="weight" name="weight" placeholder="Weight (kg)" required>
       <input type="number" id="costPerUnitWeight" name="costPerUnitWeight" placeholder="Cost per Unit Weight" required>
-      <input type="number" id="trackingNumber" name="trackingNumber" placeholder="Tracking Number" required>
+     <!-- <input type="number" id="trackingNumber" name="trackingNumber" placeholder="Tracking Number" required> -->
     
       <select name="packageType" id="packageType" required>
         <option value="">Select Package Type</option>
@@ -52,23 +52,22 @@
         <option value="TwoDay">Two-Day</option>
       </select>
     
-      <input type="number" id="flatFee" name="flatFee" placeholder="Flat Fee (for Two-Day)" />
+      <input type="number" id="flatFee" name="flatFee" placeholder="Flat Fee" />
     
       <button type="submit">Add Package</button>
     </form>
     
   </section>
 
-  <!-- List Packages -->
-  <section id="list" class="package-list-container">
-    <div class="back-button-container">
-      <button onclick="showSection('home')">Back to Home</button>
-    </div>
-    <h2>Package List</h2>
-    <div class="package-item"><h3>Package #001</h3><p>Sender: John Doe</p><p>Receiver: Jane Smith</p><p>Status: In Transit</p></div>
-    <div class="package-item"><h3>Package #002</h3><p>Sender: Alice Green</p><p>Receiver: Bob Brown</p><p>Status: Delivered</p></div>
-    <div class="package-item"><h3>Package #003</h3><p>Sender: Carlos Blue</p><p>Receiver: Diana White</p><p>Status: Pending</p></div>
-  </section>
+ <!-- List Packages -->
+<section id="list" class="package-list-container">
+  <div class="back-button-container">
+    <button onclick="showSection('home')">Back to Home</button>
+  </div>
+  <h2>Package List</h2>
+  <!-- Packages will be dynamically loaded here -->
+</section>
+
 
   <!-- Search Package 
   <section id="search" class="search-container">

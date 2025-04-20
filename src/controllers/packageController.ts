@@ -32,7 +32,7 @@ export const addOneDayPackage = async (req: Request, res: Response) => {
     const query = `
       INSERT INTO Packages (
         sender_name, receiver_name, sender_address, receiver_address,
-        weight, cost_per_unit, shipping_method, flat_fee, tracking_number, status,
+        weight, cost_per_unit, shipping_method, flat_fee, tracking_number, status
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
     `;
 
@@ -110,3 +110,5 @@ export const addTwoDayPackage = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Error adding Two-Day package." });
   }
 };
+
+

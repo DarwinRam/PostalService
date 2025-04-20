@@ -15,6 +15,7 @@ app.use(body_parser_1.default.json());
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
 // Use postal package routes
 app.use('/api', postalRoutes_1.default);
+
 // Route to serve index.html
 app.get('/', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, 'public', 'index.html'));
